@@ -1,0 +1,13 @@
+# Salesforce DX
+.sfdx/
+.sf/
+.localdevserver/
+**/logs/
+**/.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Scratch org auth (never commit secrets)
+**/auth/

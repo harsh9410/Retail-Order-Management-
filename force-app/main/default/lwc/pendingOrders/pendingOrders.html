@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Pending Orders" icon-name="standard:orders">
+        <div class="slds-p-around_medium">
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading pending orders" size="medium"></lightning-spinner>
+            </template>
+
+            <template lwc:if={error}>
+                <div class="slds-text-color_error">{error}</div>
+            </template>
+
+            <template lwc:if={hasOrders}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={orders}
+                    columns={columns}
+                    hide-checkbox-column
+                    show-row-number-column>
+                </lightning-datatable>
+            </template>
+
+            <template lwc:if={showEmptyState}>
+                <div class="slds-text-align_center slds-p-vertical_large slds-text-color_weak">
+                    No pending orders found.
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
